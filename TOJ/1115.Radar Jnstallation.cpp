@@ -4,7 +4,7 @@
 struct Point{
     double l,r;
 }point[1000];
-bool cmp(const Point &p,const Point &q){
+bool cmp(Point p,Point q){
     return p.l<q.l;
 }
 int main(){
