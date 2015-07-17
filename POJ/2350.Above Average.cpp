@@ -13,7 +13,7 @@ int main(){
         for(avg=k/m,abv=i=0;i<m;i++)
             if(grd[i]>avg)
                 abv++;
-        printf("%.3lf",100*abv/m);
+        printf("%.3f",100*abv/m);
         puts("%");
     }
 }
