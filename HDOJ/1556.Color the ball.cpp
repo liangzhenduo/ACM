@@ -10,7 +10,7 @@ void update(int i,int val){
 		i+=lowbit(i);
 	}
 }
-int querry(int i){
+int query(int i){
     int sum=0;
 	while(i>0){
         sum+=bal[i];
@@ -28,7 +28,7 @@ int main(){
 			update(b+1,-1);
 		}
 		for(i=1;i<n;i++)
-			printf("%d ",querry(i));
-        printf("%d\n",querry(i));
+			printf("%d ",query(i));
+        printf("%d\n",query(i));
 	}
 }
