@@ -1,35 +1,34 @@
 #include <cstdio>
 #include <cstring>
-int n,c[110000];
+int bal[100005],n;
 int lowbit(int x){
-    return x&(-x);
+	return x&(-x);
 }
-void modify(int x,int data){
-    while(x>0){
-        c[x]+=data;
-        x-=lowbit(x);
-    }
+void update(int i,int val){
+	while(i<=n){
+		bal[i]+=val;
+		i+=lowbit(i);
+	}
 }
-int get_sum(int x){
+int querry(int i){
     int sum=0;
-    while(x<=n){
-        sum+=c[x];
-        x+=lowbit(x);
-    }
-    return sum;
+	while(i>0){
+        sum+=bal[i];
+        i-=lowbit(i);
+	}
+	return sum;
 }
 int main(){
-    while(scanf("%d",&n)&&n){
-        int a,b,i;
-        memset(c,0,sizeof(c));
-        for(i=0;i<n;i++){
-            scanf("%d%d",&a,&b);
-            modify(b,1);
-            modify(a-1,-1);
-        }
-        for(i=1;i<n;i++)
-            printf("%d ",get_sum(i));
-        printf("%d\n",get_sum(n));
-    }
-    return 0;
+	int a,b,i;
+	while(scanf("%d",&n)&&n){
+		memset(bal,0,sizeof(bal));
+		for(i=0;i<n;i++){
+			scanf("%d%d",&a,&b);
+			update(a,1);
+			update(b+1,-1);
+		}
+		for(i=1;i<n;i++)
+			printf("%d ",querry(i));
+        printf("%d\n",querry(i));
+	}
 }
