@@ -27,16 +27,16 @@ void update(int a,int b,int s){
         update(a,b,2*s+1);
     node[s].w=std::max(node[2*s].w,node[2*s+1].w);
 }
-int querry(int l,int r,int s){
+int query(int l,int r,int s){
     if(node[s].l==l&&node[s].r==r)
         return node[s].w;
     int mid=(node[s].l+(node[s].r-node[s].l)/2);
     if(r<=mid)
-        return querry(l,r,2*s);
+        return query(l,r,2*s);
     if(l>mid)
-        return querry(l,r,2*s+1);
+        return query(l,r,2*s+1);
     if(l<=mid&&r>mid)
-        return std::max(querry(l,mid,2*s),querry(mid+1,r,2*s+1));
+        return std::max(query(l,mid,2*s),query(mid+1,r,2*s+1));
     return 0;
 }
 int main(){
@@ -52,7 +52,7 @@ int main(){
             if(opr[0]=='U')
                 update(a,b,1);
             else
-                printf("%d\n",querry(a,b,1));
+                printf("%d\n",query(a,b,1));
         }
     }
 }
