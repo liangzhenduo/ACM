@@ -1,13 +1,12 @@
 #include <iostream>
-#include <string>
-#include <cmath>
-#include <cstring>
 #include <cstdio>
+#include <string>
 #include <cstring>
 #include <algorithm>
-#define MAX_L 1000
+#include <cmath>
 using namespace std;
 
+const int MAX_L=1000;
 class BigInt{
 public:
     int len,s[MAX_L];
