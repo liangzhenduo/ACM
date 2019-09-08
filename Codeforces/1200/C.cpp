@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 long long gcd(long long a, long long b) {
-    return b?gcd(b,a%b):a;
+	return b ? gcd(b,a%b) : a;
 }
 int main() {
 #ifndef ONLINE_JUDGE
 	freopen("in.txt", "r", stdin);
 #endif
 	long long n, m;
-  int q;
+	int q;
 	scanf("%lld%lld%d", &n, &m, &q);
 	long long k = gcd(n, m);
 	long long sx, ex, sy, ey;

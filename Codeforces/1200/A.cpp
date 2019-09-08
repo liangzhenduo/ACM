@@ -11,7 +11,7 @@ int main() {
 	scanf("%s", str);
 	for(int i = 0; i < n; i++) {
 		if(str[i] == 'L') {
-			for(int j = 0; j < 10; j ++) {
+			for(int j = 0; j < 10; j++) {
 				if(res[j] == '0') {
 					res[j] = '1';
 					break;
@@ -19,7 +19,7 @@ int main() {
 			}
 		}
 		else if(str[i] == 'R') {
-			for(int j = 9; j >= 0; j --) {
+			for(int j = 9; j >= 0; j--) {
 				if(res[j] == '0') {
 					res[j] = '1';
 					break;
